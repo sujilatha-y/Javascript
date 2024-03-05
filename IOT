@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Patient Monitoring</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Real-Time Patient Monitoring System</h1>
+    <div id="patientData"></div>
+
+    <script>
+        // Function to update patient data on the UI
+        function updatePatientData() {
+            const patientDataElement = document.getElementById('patientData');
+            const heartRate = Math.floor(Math.random() * (100 - 60 + 1)) + 60; // Simulate heart rate between 60 and 100 bpm
+            const bloodPressure = `${Math.floor(Math.random() * (140 - 90 + 1)) + 90}/${Math.floor(Math.random() * (90 - 60 + 1)) + 60}`; // Simulate blood pressure
+            const temperature = (Math.random() * (99.0 - 97.0) + 97.0).toFixed(1); // Simulate temperature between 97.0 and 99.0 degrees Fahrenheit
+            
+            patientDataElement.innerHTML = `
+                <h2>Patient Data</h2>
+                <ul>
+                    <li>Heart Rate: ${heartRate} bpm</li>
+                    <li>Blood Pressure: ${bloodPressure}</li>
+                    <li>Temperature: ${temperature} &deg;F</li>
+                    <!-- Add more patient data as needed -->
+                </ul>
+            `;
+        }
+
+        // Update patient data every 5 seconds
+        setInterval(updatePatientData, 5000); // Update every 5 seconds (adjust as needed)
+    </script>
+</body>
+</html>
